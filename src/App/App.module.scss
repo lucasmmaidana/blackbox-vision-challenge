@@ -2,20 +2,51 @@
 .container {
   width: 100%;
   max-width: 480px;
-}
+  background-color: white;
+  padding:2em;
+  box-shadow: 0 6px 12px rgba(61, 66, 61, 0.199);
+  border-radius: 10px;
 
-// Header
-.header {
-  h1 {
-    font-weight: 800;
-    font-size: 2rem;
-    margin: 0;
-    margin-bottom: 6px;
+  & > div {
+    font-size: 1.5em;
+    margin-bottom: 1em;
   }
 
-  h3 {
-    font-weight: 300;
-    font-size: 1.25rem;
-    margin: 0;
+  .answers {
+    margin-top:2em;
+    display: flex;
+    flex-flow: column;
+    gap: 1em;
+    position: relative;
+  }
+
+  .alert {
+    visibility: hidden;
+    position: absolute;
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    font-weight: 600;
+    font-size: 1.2em;
+    opacity:0;
+    transform: translateY(10px);
+
+    div {
+      background: white;
+      padding:2em 3em;
+      box-shadow: 0 6px 12px rgba(61, 66, 61, 0.199);
+      border-radius: 10px;
+    }
+
+    &.visible {
+      visibility: visible;
+      opacity:1;
+      transform: translateY(0);
+      transition: all 0.3s ease-out;
+    }
   }
 }
+
