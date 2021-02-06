@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import logo from "../assets/logo.png";
 import api from "../question/api";
 import QuestionCard from "../question/components/QuestionCard";
+import {Question} from "../question/types";
 import Button from "../ui/controls/Button";
 
 import styles from "./App.module.scss";
@@ -93,7 +93,7 @@ const App: React.FC = () => {
         {[...question.incorrect_answers, question.correct_answer]
           .sort((a, b) => a.localeCompare(b))
           .map((answer) => (
-            <Button key={answer} disabled={isAnswered && "true"} onClick={() => onAnswer(answer)}>
+            <Button key={answer} disabled={isAnswered && true} onClick={() => onAnswer(answer)}>
               {answer}
             </Button>
           ))}
